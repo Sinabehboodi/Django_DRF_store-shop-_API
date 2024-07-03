@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for order in orders %}
+        <h1>{{ order.id }}  {{ order.customer.title }}</h1>
+        
+        {% for item in order.items.all %}
+            <p>{{ item.id }}  {{ item.quantity }}</p>
+        {% endfor %}
+            
+        <p>------------------------------------</p>
+    {% endfor %}
+        
+</body>
+</html>
